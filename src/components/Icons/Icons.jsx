@@ -7,20 +7,51 @@ import System from "../System/System";
 import Projects from "../Projects/Projects";
 
 const Icons = () => {
-  const [isOpen, setIsOpen] = useState(false);
+  const [isProject, setIsProject] = useState(false);
   const [isFileOne, setIsFileOne] = useState(false);
   const [isFileTwo, setIsFileTwo] = useState(false);
   const [isFileThree, setIsFileThree] = useState(false);
   const [isFileFour, setIsFileFour] = useState(false);
   const [isFileFive, setIsFileFive] = useState(false);
   const [isFileSix, setIsFileSix] = useState(false);
+  const [isSystem, setIsSystem] = useState(false);
+
+  const [isDragging, setIsDragging] = useState({ status: false, zIndex: 100 });
+  const [isDraggingOne, setIsDraggingOne] = useState({
+    status: false,
+    zIndex: 100,
+  });
+  const [isDraggingTwo, setIsDraggingTwo] = useState({
+    status: false,
+    zIndex: 100,
+  });
+  const [isDraggingThree, setIsDraggingThree] = useState({
+    status: false,
+    zIndex: 100,
+  });
+  const [isDraggingFour, setIsDraggingFour] = useState({
+    status: false,
+    zIndex: 100,
+  });
+  const [isDraggingFive, setIsDraggingFive] = useState({
+    status: false,
+    zIndex: 100,
+  });
+  const [isDraggingSix, setIsDraggingSix] = useState({
+    status: false,
+    zIndex: 100,
+  });
+  const [isDraggingSystem, setIsDraggingSystem] = useState({
+    status: false,
+    zIndex: 100,
+  });
 
   return (
     <>
       <div className="icons">
         <Projects
-          isOpen={isOpen}
-          setIsOpen={setIsOpen}
+          isProject={isProject}
+          setIsProject={setIsProject}
           isFileOne={isFileOne}
           setIsFileOne={setIsFileOne}
           isFileTwo={isFileTwo}
@@ -33,9 +64,44 @@ const Icons = () => {
           setIsFileFive={setIsFileFive}
           isFileSix={isFileSix}
           setIsFileSix={setIsFileSix}
+          isDragging={isDragging}
+          setIsDragging={setIsDragging}
+          isDraggingOne={isDraggingOne}
+          setIsDraggingOne={setIsDraggingOne}
+          isDraggingTwo={isDraggingTwo}
+          setIsDraggingTwo={setIsDraggingTwo}
+          isDraggingThree={isDraggingThree}
+          setIsDraggingThree={setIsDraggingThree}
+          isDraggingFour={isDraggingFour}
+          setIsDraggingFour={setIsDraggingFour}
+          isDraggingFive={isDraggingFive}
+          setIsDraggingFive={setIsDraggingFive}
+          isDraggingSix={isDraggingSix}
+          setIsDraggingSix={setIsDraggingSix}
+          isDraggingSystem={isDraggingSystem}
+          setIsDraggingSystem={setIsDraggingSystem}
         />
 
-        <System />
+        <System
+          isSystem={isSystem}
+          setIsSystem={setIsSystem}
+          isDragging={isDragging}
+          setIsDragging={setIsDragging}
+          isDraggingOne={isDraggingOne}
+          setIsDraggingOne={setIsDraggingOne}
+          isDraggingTwo={isDraggingTwo}
+          setIsDraggingTwo={setIsDraggingTwo}
+          isDraggingThree={isDraggingThree}
+          setIsDraggingThree={setIsDraggingThree}
+          isDraggingFour={isDraggingFour}
+          setIsDraggingFour={setIsDraggingFour}
+          isDraggingFive={isDraggingFive}
+          setIsDraggingFive={setIsDraggingFive}
+          isDraggingSix={isDraggingSix}
+          setIsDraggingSix={setIsDraggingSix}
+          isDraggingSystem={isDraggingSystem}
+          setIsDraggingSystem={setIsDraggingSystem}
+        />
 
         <div className="icon__file cybr-btn">
           <i className="bx bx-user icon__img"></i>

@@ -1,8 +1,6 @@
-/** @jsxImportSource @emotion/react */
 import React, { useEffect, useState } from "react";
-import ReactDOM from "react-dom";
 import "./style.css";
-import Draggable from 'react-draggable';
+import Draggable from "react-draggable";
 
 import interactiveRating from "../../assets/img/foto-1.png";
 import nftCard from "../../assets/img/foto-2.png";
@@ -16,7 +14,7 @@ function getWindowDimensions() {
   const { innerWidth: width, innerHeight: height } = window;
   return {
     width,
-    height
+    height,
   };
 }
 
@@ -37,16 +35,71 @@ function useWindowDimensions() {
   return windowDimensions;
 }
 
-const System = () => {
-  const [isImg, setIsImg] = useState("/src/assets/img/foto-1.png")
+const System = ({
+  isDragging,
+  setIsDragging,
+  isDraggingOne,
+  setIsDraggingOne,
+  isDraggingTwo,
+  setIsDraggingTwo,
+  isDraggingThree,
+  setIsDraggingThree,
+  isDraggingFour,
+  setIsDraggingFour,
+  isDraggingFive,
+  setIsDraggingFive,
+  isDraggingSix,
+  setIsDraggingSix,
+  isSystem,
+  setIsSystem,
+  isDraggingSystem,
+  setIsDraggingSystem,
+}) => {
+  const [isImg, setIsImg] = useState("/src/assets/img/foto-1.png");
   const [pink, setPink] = useState(false);
   const [yellow, setYellow] = useState(false);
   const [purple, setPurple] = useState(false);
   const [white, setWhite] = useState(false);
-  const [isSystem, setIsSystem] = useState(false);
 
   const handleSystem = () => {
     setIsSystem((current) => !current);
+    dragSystem();
+  };
+
+  const dragSystem = () => {
+    setIsDragging({
+      ...isDragging,
+      zIndex: (isDragging.zIndex = 100),
+    }),
+      setIsDraggingOne({
+        ...isDraggingOne,
+        zIndex: (isDraggingOne.zIndex = 100),
+      }),
+      setIsDraggingTwo({
+        ...isDraggingTwo,
+        zIndex: (isDraggingTwo.zIndex = 100),
+      }),
+      setIsDraggingThree({
+        ...isDraggingThree,
+        zIndex: (isDraggingThree.zIndex = 100),
+      }),
+      setIsDraggingFour({
+        ...isDraggingFour,
+        zIndex: (isDraggingFour.zIndex = 100),
+      }),
+      setIsDraggingFive({
+        ...isDraggingFive,
+        zIndex: (isDraggingFive.zIndex = 100),
+      }),
+      setIsDraggingSix({
+        ...isDraggingSix,
+        zIndex: (isDraggingSix.zIndex = 100),
+      }),
+      setIsDraggingSystem({
+        ...isDraggingSystem,
+        status: true,
+        zIndex: (isDraggingSystem.zIndex = 101),
+      });
   };
 
   const setChange = (changeImg) => {
@@ -68,9 +121,7 @@ const System = () => {
 
   return (
     <div>
-      <div className="icon__file cybr-btn"
-        onClick={(e) => handleSystem()}
-      >
+      <div className="icon__file cybr-btn" onClick={(e) => handleSystem()}>
         <i className="bx bx-folder icon__img"></i>
         <div className="icon__text cybr-btn">System</div>
         <span className="cybr-btn__glitch">
@@ -83,8 +134,16 @@ const System = () => {
         <Draggable
           handle="#imhandle"
           cancel=".buttons"
+          onStart={() => dragSystem()}
+          onStop={() => setIsDraggingSystem({ ...isDraggingSystem, status: false })}
         >
-          <div className="system">
+          <div
+            className={`draggable-block-container system`}
+            style={{
+              zIndex: isDraggingSystem.zIndex,
+            }}
+          >
+          
             <div className="system__wrapper">
               <div className="system__container">
                 <div className="system__header" id="imhandle">
@@ -106,7 +165,6 @@ const System = () => {
                   <div className="system__bg">
                     {/*<div className="bg__line"><div className="bg__internal bg__internal-1"></div></div>*/}
                   </div>
-
 
                   {/*<div className="gallery">
                   <figure className="gallery__main">
@@ -152,27 +210,18 @@ const System = () => {
                     </h3>
                     <h3 className="system__text">
                       Description:{" "}
-                      <span className="system__span">
-                        Lorem ipsum dolor
-                      </span>
+                      <span className="system__span">Lorem ipsum dolor</span>
                     </h3>
                     <h3 className="system__text">
                       Font:{" "}
-                      <span className="system__span">
-                        Source Code Pro
-                      </span>
+                      <span className="system__span">Source Code Pro</span>
                     </h3>
                     <h3 className="system__text">
                       Icons Memory:{" "}
-                      <span className="system__span">
-                        Font Awesome
-                      </span>
+                      <span className="system__span">Font Awesome</span>
                     </h3>
                     <h3 className="system__text">
-                      Theme:{" "}
-                      <span className="system__span">
-                        Theme
-                      </span>
+                      Theme: <span className="system__span">Theme</span>
                     </h3>
                     <h3 className="system__text">
                       Device Resolution:{" "}
@@ -181,66 +230,91 @@ const System = () => {
                       </span>
                     </h3>
                     <h3 className="system__text">
-                      Version:{" "}
-                      <span className="system__span">
-                        1.0
-                      </span>
+                      Version: <span className="system__span">1.0</span>
                     </h3>
 
                     <div className="system__colors">
-                      <div className="colors" title="#ea2e8c" onClick={() => { setPink(true); navigator.clipboard.writeText('#ea2e8c') }}>
+                      <div
+                        className="colors"
+                        title="#ea2e8c"
+                        onClick={() => {
+                          setPink(true);
+                          navigator.clipboard.writeText("#ea2e8c");
+                        }}
+                      >
                         <Check
                           isVisible={pink}
                           css={{
-                            color: 'green',
+                            color: "green",
                             strokeDasharray: 50,
                             strokeDashoffset: pink ? 0 : -50,
-                            transition: "all 300ms ease-in-out"
+                            transition: "all 300ms ease-in-out",
                           }}
                         />
                       </div>
-                      <div className="colors" title="#f08e0f" onClick={() => { setYellow(true); navigator.clipboard.writeText('#f08e0f') }}>
+                      <div
+                        className="colors"
+                        title="#f08e0f"
+                        onClick={() => {
+                          setYellow(true);
+                          navigator.clipboard.writeText("#f08e0f");
+                        }}
+                      >
                         <Check
                           isVisible={yellow}
                           css={{
-                            color: 'green',
+                            color: "green",
                             strokeDasharray: 50,
                             strokeDashoffset: yellow ? 0 : -50,
-                            transition: "all 300ms ease-in-out"
+                            transition: "all 300ms ease-in-out",
                           }}
                         />
                       </div>
-                      <div className="colors" title="#000024" onClick={() => { setPurple(true); navigator.clipboard.writeText('#000024') }}>
+                      <div
+                        className="colors"
+                        title="#000024"
+                        onClick={() => {
+                          setPurple(true);
+                          navigator.clipboard.writeText("#000024");
+                        }}
+                      >
                         <Check
                           isVisible={purple}
                           css={{
-                            color: 'green',
+                            color: "green",
                             strokeDasharray: 50,
                             strokeDashoffset: purple ? 0 : -50,
-                            transition: "all 300ms ease-in-out"
+                            transition: "all 300ms ease-in-out",
                           }}
                         />
                       </div>
 
-                      <div className="colors" title="#ededf7" onClick={() => { setWhite(true); navigator.clipboard.writeText('#ededf7') }}>
+                      <div
+                        className="colors"
+                        title="#ededf7"
+                        onClick={() => {
+                          setWhite(true);
+                          navigator.clipboard.writeText("#ededf7");
+                        }}
+                      >
                         <Check
                           isVisible={white}
                           css={{
-                            color: 'green',
+                            color: "green",
                             strokeDasharray: 50,
                             strokeDashoffset: white ? 0 : -50,
-                            transition: "all 300ms ease-in-out"
+                            transition: "all 300ms ease-in-out",
                           }}
                         />
                       </div>
                     </div>
-
                     <img src={os} alt="" className="os" />
                   </div>
                 </div>
               </div>
             </div>
           </div>
+        
         </Draggable>
       )}
     </div>

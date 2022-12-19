@@ -19,8 +19,8 @@ import FileFive from "../Files/FileFive";
 import FileSix from "../Files/FileSix";
 
 const Projects = ({
-  isOpen,
-  setIsOpen,
+  isProject,
+  setIsProject,
   isFileOne,
   setIsFileOne,
   isFileTwo,
@@ -33,6 +33,22 @@ const Projects = ({
   setIsFileFive,
   isFileSix,
   setIsFileSix,
+  isDragging,
+  setIsDragging,
+  isDraggingOne,
+  setIsDraggingOne,
+  isDraggingTwo,
+  setIsDraggingTwo,
+  isDraggingThree,
+  setIsDraggingThree,
+  isDraggingFour,
+  setIsDraggingFour,
+  isDraggingFive,
+  setIsDraggingFive,
+  isDraggingSix,
+  setIsDraggingSix,
+  isDraggingSystem,
+  setIsDraggingSystem
 }) => {
   const [isProj, setProj] = useState("/src/assets/img/foto-1.png");
   const [isImg, setIsImg] = useState("/src/assets/img/interactive-rating.png");
@@ -42,7 +58,7 @@ const Projects = ({
   };
 
   const handleOpen = () => {
-    setIsOpen((current) => !current);
+    setIsProject((current) => !current);
     dragFileOpen();
   };
 
@@ -75,6 +91,10 @@ const Projects = ({
       setIsDraggingSix({
         ...isDraggingSix,
         zIndex: (isDraggingSix.zIndex = 100),
+      }),
+      setIsDraggingSystem({
+        ...isDraggingSystem,
+        zIndex: (isDraggingSystem.zIndex = 100),
       });
   };
 
@@ -109,6 +129,10 @@ const Projects = ({
       setIsDraggingSix({
         ...isDraggingSix,
         zIndex: (isDraggingSix.zIndex = 100),
+      }),
+      setIsDraggingSystem({
+        ...isDraggingSystem,
+        zIndex: (isDraggingSystem.zIndex = 100),
       });
   };
 
@@ -143,6 +167,10 @@ const Projects = ({
       setIsDraggingSix({
         ...isDraggingSix,
         zIndex: (isDraggingSix.zIndex = 100),
+      }),
+      setIsDraggingSystem({
+        ...isDraggingSystem,
+        zIndex: (isDraggingSystem.zIndex = 100),
       });
   };
 
@@ -177,6 +205,10 @@ const Projects = ({
       setIsDraggingSix({
         ...isDraggingSix,
         zIndex: (isDraggingSix.zIndex = 100),
+      }),
+      setIsDraggingSystem({
+        ...isDraggingSystem,
+        zIndex: (isDraggingSystem.zIndex = 100),
       });
   };
 
@@ -211,6 +243,10 @@ const Projects = ({
       setIsDraggingSix({
         ...isDraggingSix,
         zIndex: (isDraggingSix.zIndex = 100),
+      }),
+      setIsDraggingSystem({
+        ...isDraggingSystem,
+        zIndex: (isDraggingSystem.zIndex = 100),
       });
   };
 
@@ -245,6 +281,10 @@ const Projects = ({
       setIsDraggingSix({
         ...isDraggingSix,
         zIndex: (isDraggingSix.zIndex = 100),
+      }),
+      setIsDraggingSystem({
+        ...isDraggingSystem,
+        zIndex: (isDraggingSystem.zIndex = 100),
       });
   };
 
@@ -279,34 +319,12 @@ const Projects = ({
         ...isDraggingSix,
         status: true,
         zIndex: (isDraggingSix.zIndex = 101),
+      }),
+      setIsDraggingSystem({
+        ...isDraggingSystem,
+        zIndex: (isDraggingSystem.zIndex = 100),
       });
   };
-
-  const [isDragging, setIsDragging] = useState({ status: false, zIndex: 100 });
-  const [isDraggingOne, setIsDraggingOne] = useState({
-    status: false,
-    zIndex: 100,
-  });
-  const [isDraggingTwo, setIsDraggingTwo] = useState({
-    status: false,
-    zIndex: 100,
-  });
-  const [isDraggingThree, setIsDraggingThree] = useState({
-    status: false,
-    zIndex: 100,
-  });
-  const [isDraggingFour, setIsDraggingFour] = useState({
-    status: false,
-    zIndex: 100,
-  });
-  const [isDraggingFive, setIsDraggingFive] = useState({
-    status: false,
-    zIndex: 100,
-  });
-  const [isDraggingSix, setIsDraggingSix] = useState({
-    status: false,
-    zIndex: 100,
-  });
 
   return (
     <>
@@ -319,7 +337,7 @@ const Projects = ({
         </span>
       </div>
 
-      {isOpen && (
+      {isProject && (
         <Draggable
           handle="#imhandle"
           cancel=".buttons"
