@@ -1,0 +1,17 @@
+.clock {
+    position: fixed;
+    top: calc(var(--header) + 2rem);
+    right: 2rem;
+    font-size: 24px;
+    font-weight: var(--font-bold);
+    border-radius: .5rem;
+    background-color: var(--white-vhs);
+    transition: all 0.5s;
+}
+
+.clock__box {
+    padding: .75rem;
+    background: var(--yellow-pink);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}

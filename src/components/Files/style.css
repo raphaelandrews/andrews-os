@@ -1,0 +1,131 @@
+.file-1 {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+}
+
+.file__wrapper {
+    transform: translate(-50%, -50%);
+}
+
+.file__box {
+    width: 75vw;
+    max-width: 1050px;
+    max-height: calc(100vh - 100px);
+    border-radius: 0 0 .25rem .25rem;
+    text-align: center;
+    background-color: var(--purple-cp);
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    overflow-y: auto;
+}
+
+.file__img {
+    object-fit: cover;
+    object-position: center center;
+}
+
+.file__content {
+    padding: 1em;
+}
+
+.file__title {
+    font-size: 1.5rem;
+    color: var(--yellow-cp);
+    margin-top: .5em;
+}
+
+.file__text {
+    font-size: 1rem;
+    max-width: 80%;
+    margin: 1.5em auto 0;
+}
+
+.file__redirect {
+    color: hsl(291, 100%, 50%);
+    font-weight: 600;
+}
+
+.file__redirect:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.file__links {
+    display: flex;
+    justify-content: center;
+    gap: 2em;
+    margin: 3em 0;
+}
+
+.file__link {
+    color: var(--white-vhs);
+    padding: .5em .75em;
+    background-color: var(--yellow-cp);
+}
+
+.file__techs {
+    margin: 3em 0;
+}
+
+.file__tech {
+    font-size: .7rem;
+    padding: .5em .75em;
+    background-color: hsl(240, 100%, 13%);
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.file__tech+.file__tech {
+    margin-left: 1em;
+}
+
+/*=============== RESPONSIVE ===============*/
+@media screen and (min-width: 800px) {
+    .file__box {
+        display: flex;
+        text-align: left;
+    }
+
+    .file__img,
+    .file__content {
+        width: 50%;
+    }
+
+    .file__content {
+        justify-content: inherit;
+        padding: 3rem;
+    }
+
+    .file__text {
+        max-width: inherit;
+    }
+
+    .file__links {
+        justify-content: flex-start;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .file__img {
+        width: 60%;
+    }
+
+    .file__content {
+        width: 40%;
+    }
+
+    .file__title {
+        font-size: 2.25rem;
+    }
+
+    .file__text {
+        font-size: 1.5rem;
+    }
+
+    .file__links {
+        font-size: 1.125rem;
+    }
+
+    .file__tech {
+        font-size: 1rem;
+    }
+}

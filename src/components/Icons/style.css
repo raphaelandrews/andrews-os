@@ -1,0 +1,26 @@
+.icons {
+    position: absolute;
+    top: calc(var(--header) + 2rem);
+    left: 2rem;
+}
+
+.icon__file {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    margin-bottom: 1.5rem;
+}
+
+.icon__img {
+    font-size: 2rem;
+}
+
+.icon__text {
+    font-size: 1rem;
+    margin-top: .5rem;
+    padding: 0 .5rem;
+    background-color: var(--yellow-cp);
+    box-shadow: rgb(125 125 138 / 23%) 4px 4px 0px 0px;
+}

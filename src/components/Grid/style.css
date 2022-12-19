@@ -1,0 +1,43 @@
+:root {
+  --grid-color: rgba(115, 59, 139, 0.4);
+  --grid-size: 40px;
+  --grid-blur: 1px;
+}
+
+
+.sun {
+  position: absolute;
+  bottom: 34%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: clamp(200px, 20vw, 400px);
+  z-index: -1;
+}
+
+.grid {
+  position: absolute;
+  bottom: -30%;
+  left: 0;
+  margin-left: -50%;
+  width: 200%;
+  height: 100%;
+  background-position-y: 0px;
+  background-image:
+    repeating-linear-gradient(90deg, var(--grid-color, black) 0%, transparent calc(1px + var(--grid-blur, 0px)),
+      transparent var(--grid-size), var(--grid-color, black) calc(var(--grid-size) + 1px + var(--grid-blur, 0px))),
+    repeating-linear-gradient(180deg, var(--grid-color, black) 0%, transparent calc(1px + var(--grid-blur, 0px)),
+      transparent var(--grid-size), var(--grid-color, black) calc(var(--grid-size) + 1px + var(--grid-blur, 0px)));
+  transform: perspective(50vh) rotateX(60deg) translateZ(10px);
+  animation: moving-grid 0.5s infinite linear;
+  z-index: -1;
+}
+
+/*
+@keyframes moving-grid{
+  0%{
+    transform:perspective(50vh) rotateX(60deg) translateZ(10px) translateY(-var(--grid-size));
+  }
+  100%{
+    transform:perspective(50vh) rotateX(60deg) translateZ(10px) translateY(var(--grid-size));
+  }
+}*/

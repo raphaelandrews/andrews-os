@@ -1,0 +1,51 @@
+.db__container {
+    position: absolute;
+    margin-left: 2.5rem;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 324px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    padding: 2rem;
+    border-radius: 1rem;
+    box-shadow: #0000003d 0 3px 8px;
+    background-color: var(--dark-black);
+}
+
+.icon__folder {
+    position: relative;
+    width: 64px;
+    height: 64px;
+    border-radius: .5rem;
+    cursor: pointer;
+    background-color: var(--dark);
+}
+
+.icon__logo {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 64px;
+    height: 64px;
+    border-radius: .5rem;
+}
+
+.db__logo {
+    width: 64px;
+    cursor: pointer;
+}
+
+.icon__box {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 28px;
+    height: 28px;
+    border-radius: 0 .5rem 0 .5rem;
+    background-color: var(--blue);
+}
