@@ -1,0 +1,45 @@
+.theme {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 1rem;
+}
+
+.theme__btn {
+    padding: 1rem;
+    border-radius: .5rem;
+}
+
+.theme__btn-cyber {
+    background-color: var(--purple-cp);
+}
+
+.theme__name {
+    display: block;
+    color: var(--white-vhs);
+}
+
+.theme__picker {
+    display: block;
+    padding: 0.5rem 0 0;
+}
+
+.theme__palette {
+    display: inline-block;
+    width: 1.5em;
+    height: 1.5em;
+    border-radius: 50%;
+    white-space: nowrap;
+    text-indent: 100%;
+    text-align: left;
+    overflow: hidden;
+    vertical-align: bottom;
+    box-shadow: 0 0 0 2px var(--purple-cp);
+}
+
+.theme__cyber-one {
+    background-color: var(--yellow-cp);
+}
+
+.theme__cyber-two {
+    background-color: var(--violet-retro);
+}

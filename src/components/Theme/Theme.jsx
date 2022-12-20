@@ -1,4 +1,5 @@
 import React from "react";
+import "./style.css";
 
 const Theme = () => {
   const body = document.body;
@@ -43,12 +44,57 @@ const Theme = () => {
       theme = altTheme;
     }
   };
-  
+
   return (
-    <div>
-      <button onClick={(e) => switchCyberpunk(e)} className=""></button>
-      <button onClick={(e) => switchLight(e)} className=""></button>
-      <button onClick={(e) => switchAlt(e)} className=""></button>
+    <div className="theme">
+      <button
+        onClick={(e) => switchCyberpunk(e)}
+        className="theme__btn theme__btn-cyber"
+      >
+        <span className="theme__name">Cyberpunk</span>
+        <span className="theme__picker">
+          <span className="theme__palette theme__cyber-one"></span>
+          <span className="theme__palette theme__cyber-two"></span>
+          <span className="theme__palette"></span>
+          <span className="theme__palette"></span>
+        </span>
+      </button>
+      <button onClick={(e) => switchLight(e)} className="theme__btn theme__btn-cyber">
+        <span className="theme__name">Cyberpunk</span>
+        <span className="theme__picker">
+          <span className="theme__palette theme__cyber-one"></span>
+          <span className="theme__palette theme__cyber-two"></span>
+          <span className="theme__palette"></span>
+          <span className="theme__palette"></span>
+        </span>
+      </button>
+      <button onClick={(e) => switchAlt(e)} className="theme__btn theme__btn-cyber">
+        <span className="theme__name">Cyberpunk</span>
+        <span className="theme__picker">
+          <span className="theme__palette theme__cyber-one"></span>
+          <span className="theme__palette theme__cyber-two"></span>
+          <span className="theme__palette"></span>
+          <span className="theme__palette"></span>
+        </span>
+      </button>
+      <button onClick={(e) => switchAlt(e)} className="theme__btn theme__btn-cyber">
+        <span className="theme__name">Cyberpunk</span>
+        <span className="theme__picker">
+          <span className="theme__palette theme__cyber-one"></span>
+          <span className="theme__palette theme__cyber-two"></span>
+          <span className="theme__palette"></span>
+          <span className="theme__palette"></span>
+        </span>
+      </button>
+      <button onClick={(e) => switchAlt(e)} className="theme__btn theme__btn-cyber">
+        <span className="theme__name">Cyberpunk</span>
+        <span className="theme__picker">
+          <span className="theme__palette theme__cyber-one"></span>
+          <span className="theme__palette theme__cyber-two"></span>
+          <span className="theme__palette"></span>
+          <span className="theme__palette"></span>
+        </span>
+      </button>
     </div>
   );
 };

@@ -232,7 +232,7 @@ const System = ({
                     <h3 className="system__text">
                       Theme:{" "}
                       <span className="system__span">
-                        {theme.charAt(0).toUpperCase() + theme.slice(1)}
+                        {theme[0].toUpperCase() + theme.slice(1)}
                       </span>
                     </h3>
                     <h3 className="system__text">

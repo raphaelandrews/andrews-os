@@ -1,27 +1,31 @@
 .island {
     position: absolute;
     top: 0;
-    left: calc(50% - 200px);
+   /* left: calc(50% - 200px);*/
     display: flex;
     align-items: center;
     width: 400px;
+    max-width: 60%;
     height: calc(var(--header) - 2px);
     padding: 0 1rem;
     background-color: var(--dark-sweet-alt);
     transition: .5s;
-    z-index: 1;
+    z-index: 102;
 }
 
 .island-open {
     position: fixed;
     top: 10%;
-    left: calc(50% - 300px);
-    width: 600px;
+    left: inherit;
+    height: inherit;
+    width:600px;
+    max-width: 90%;
     height: 300px;
-    max-height: 95%;
     border-radius: 1rem;
+    padding: 1rem;
+    box-shadow: rgb(0 0 0 / 35%) 0px 5px 15px;
+    overflow: auto;
     transition: .5s;
-    z-index: 102;
 }
 
 .island__setting {  
@@ -37,8 +41,14 @@
     top: 1rem;
 }
 
+.island__themes {
+    padding: 1.5rem;
+    width: 100%;
+    height: 80%;
+}
+
 .rotate__setting {
-    animation: rotate 1.5s linear .5;
+    animation: rotate 1s linear .5;
 }
 
 @keyframes rotate {
@@ -51,7 +61,7 @@
 }
 
 .rotate__setting-alt {
-    animation: rotate-alt 1.5s linear .5;
+    animation: rotate-alt 1s linear .5;
 }
 
 @keyframes rotate-alt {
