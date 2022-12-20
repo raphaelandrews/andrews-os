@@ -128,12 +128,12 @@ const System = ({
   }
 
   return (
-    <div>
+    <>
       <div className="icon__file cybr-btn" onClick={(e) => handleSystem()}>
-        <i class="bx bx-window-alt icon__img"></i>
+        <i className="bx bx-window-alt icon__img"></i>
         <div className="icon__text cybr-btn">System</div>
         <span className="cybr-btn__glitch">
-          <i class="bx bx-window-alt icon__img"></i>
+          <i className="bx bx-window-alt icon__img"></i>
           <div className="icon__text">System</div>
         </span>
       </div>
@@ -328,7 +328,7 @@ const System = ({
           </div>
         </Draggable>
       )}
-    </div>
+    </>
   );
 };
 

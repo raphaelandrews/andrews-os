@@ -24,3 +24,10 @@
     background-color: var(--yellow-cp);
     box-shadow: rgb(125 125 138 / 23%) 4px 4px 0px 0px;
 }
+
+@media screen and (max-height: 440px) {
+    .icons {
+        display: flex;
+        gap: 1.5rem;
+    }
+}

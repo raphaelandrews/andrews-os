@@ -1,0 +1,64 @@
+.island {
+    position: absolute;
+    top: 0;
+    left: calc(50% - 200px);
+    display: flex;
+    align-items: center;
+    width: 400px;
+    height: calc(var(--header) - 2px);
+    padding: 0 1rem;
+    background-color: var(--dark-sweet-alt);
+    transition: .5s;
+    z-index: 1;
+}
+
+.island-open {
+    position: fixed;
+    top: 10%;
+    left: calc(50% - 300px);
+    width: 600px;
+    height: 300px;
+    max-height: 95%;
+    border-radius: 1rem;
+    transition: .5s;
+    z-index: 102;
+}
+
+.island__setting {  
+    font-size: 1rem;
+}
+
+.island__setting:hover {
+    cursor: pointer;
+}
+
+.island__setting-open {
+    position: absolute;
+    top: 1rem;
+}
+
+.rotate__setting {
+    animation: rotate 1.5s linear .5;
+}
+
+@keyframes rotate {
+    from {
+        transform:rotate(0deg);
+    }
+    to {
+        transform:rotate(360deg);
+    }
+}
+
+.rotate__setting-alt {
+    animation: rotate-alt 1.5s linear .5;
+}
+
+@keyframes rotate-alt {
+    from {
+        transform:rotate(0deg);
+    }
+    to {
+        transform:rotate(360deg);
+    }
+}
