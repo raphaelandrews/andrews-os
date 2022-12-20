@@ -48,7 +48,7 @@
 
     /*== Sweet ==*/
     --dark-sweet: hsl(225, 25%, 6%);
-    --dark-sweet2: hsl(225, 25%, 8%);
+    --dark-sweet-alt: hsl(225, 25%, 14%);
     --blue-sweet: hsl(228, 25%, 12%);
     --grey-sweet: hsl(223, 13%, 79%);
     --purple-pink-sweet: linear-gradient(to right,
@@ -73,7 +73,7 @@
     font-family: 'Syncopate', sans-serif; 
     font-family: 'Road Rage', sans-serif;                  
     */
-
+    
     --first-font: 'Dosis', sans-serif;
     --second-font: '';
     --alt-font: 'Road Rage';

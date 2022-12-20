@@ -1,9 +1,10 @@
-.taskbar{
+.taskbar {
     position: fixed;
     top: 0;
     left: 0;
     display: flex;
     justify-content: space-between;
+    align-items: center;
     padding: 0 .75rem;
     height: var(--header);
     width: 100vw;
@@ -15,9 +16,37 @@
     border-image: linear-gradient(to right, rgba(239, 141, 15, 1) 0%, rgba(234, 45, 141, 1)) 1;*/
     box-shadow: rgb(0 0 0 / 35%) 0px 7px 0px 0px;
 }
-    
+
 
 .taskbar__logo {
     width: 24px;
     cursor: pointer;
+}
+
+.taskbar__island {
+    display: flex;
+    align-items: center;
+    width: 400px;
+    height: 70%;
+    padding: 0 1rem;
+    border-radius: 1.25rem;
+    background-color: var(--dark-sweet-alt);
+}
+
+.taskbar__setting {  
+    font-size: 1rem;
+}
+
+.taskbar__setting:hover {
+    cursor: pointer;
+    animation: rotate 2s linear infinite;
+}
+
+@keyframes rotate {
+    from {
+        transform:rotate(0deg);
+    }
+    to {
+        transform:rotate(360deg);
+    }
 }

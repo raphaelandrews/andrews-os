@@ -1,3 +1,4 @@
+/** @jsxImportSource @emotion/react */
 import React, { useEffect, useState } from "react";
 import "./style.css";
 import Draggable from "react-draggable";
@@ -119,13 +120,20 @@ const System = ({
 
   const { height, width } = useWindowDimensions();
 
+  // Theme from local storage
+  let theme;
+
+  if (localStorage) {
+    theme = localStorage.getItem("theme");
+  }
+
   return (
     <div>
       <div className="icon__file cybr-btn" onClick={(e) => handleSystem()}>
-        <i className="bx bx-folder icon__img"></i>
+        <i class="bx bx-window-alt icon__img"></i>
         <div className="icon__text cybr-btn">System</div>
         <span className="cybr-btn__glitch">
-          <i className="bx bx-folder icon__img"></i>
+          <i class="bx bx-window-alt icon__img"></i>
           <div className="icon__text">System</div>
         </span>
       </div>
@@ -135,7 +143,9 @@ const System = ({
           handle="#imhandle"
           cancel=".buttons"
           onStart={() => dragSystem()}
-          onStop={() => setIsDraggingSystem({ ...isDraggingSystem, status: false })}
+          onStop={() =>
+            setIsDraggingSystem({ ...isDraggingSystem, status: false })
+          }
         >
           <div
             className={`draggable-block-container system`}
@@ -143,7 +153,6 @@ const System = ({
               zIndex: isDraggingSystem.zIndex,
             }}
           >
-          
             <div className="system__wrapper">
               <div className="system__container">
                 <div className="system__header" id="imhandle">
@@ -157,11 +166,11 @@ const System = ({
                 </div>
                 <div className="system__box">
                   <h2 className="system__title">Andrews OS</h2>
-                  <div className="system__border">
+                  {/*<div className="system__border">
                     <div className="system__handle">
                       <img src={foto} alt="" className="system__photo" />
                     </div>
-                  </div>
+                  </div>*/}
                   <div className="system__bg">
                     {/*<div className="bg__line"><div className="bg__internal bg__internal-1"></div></div>*/}
                   </div>
@@ -202,7 +211,7 @@ const System = ({
                     <h3 className="system__text">
                       OS: <span className="system__span">Andrews</span>
                     </h3>
-                    <h3 className="system__text">
+                    {/*<h3 className="system__text">
                       Location: <span className="system__span">Aracaju/SE</span>
                     </h3>
                     <h3 className="system__text">
@@ -211,17 +220,20 @@ const System = ({
                     <h3 className="system__text">
                       Description:{" "}
                       <span className="system__span">Lorem ipsum dolor</span>
-                    </h3>
+                    </h3>*/}
                     <h3 className="system__text">
                       Font:{" "}
-                      <span className="system__span">Source Code Pro</span>
+                      <span className="system__span">Dosis, sans-serif</span>
                     </h3>
                     <h3 className="system__text">
                       Icons Memory:{" "}
-                      <span className="system__span">Font Awesome</span>
+                      <span className="system__span">Boxicons</span>
                     </h3>
                     <h3 className="system__text">
-                      Theme: <span className="system__span">Theme</span>
+                      Theme:{" "}
+                      <span className="system__span">
+                        {theme.charAt(0).toUpperCase() + theme.slice(1)}
+                      </span>
                     </h3>
                     <h3 className="system__text">
                       Device Resolution:{" "}
@@ -314,7 +326,6 @@ const System = ({
               </div>
             </div>
           </div>
-        
         </Draggable>
       )}
     </div>

@@ -21,13 +21,14 @@
 
 .system__container {
     min-width: 280px;
-    min-height: 340px;
     display: flex;
     flex-direction: column;
     background-color: var(--purple-cp);
     border-radius: .5rem;
     animation: spin 2.5s linear infinite;
 }
+
+
 
 .system__container::before,
 .system__container::after {
@@ -36,9 +37,8 @@
     height: calc(100% + 4px);
     border-radius: .5rem;
     background: linear-gradient(var(--rotate),
-            rgba(239, 141, 15, 1),
-            rgba(239, 141, 15, 1) 43%,
-            rgba(234, 45, 141, 1));
+            hsl(271, 100%, 50%),
+            hsl(291, 100%, 50%));
     position: absolute;
     top: -2px;
     left: -2px;
@@ -253,4 +253,21 @@ img {
 
 .os {
     display: none;
+}
+
+/*=============== RESPONSIVE ===============*/
+@media screen and (min-width: 600px) {
+    .system__box {
+        display: flex;
+        align-items: center;
+        padding: 1em 2em 4em;
+    }
+
+    .system__title {
+        max-width: 180px;
+    }
+
+    .system__content {
+        min-width: 300px;
+    }
 }

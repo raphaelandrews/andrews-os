@@ -14,7 +14,7 @@ body {
     background-position: center;*/
 }
 
-body.dark {
+body.light {
     color: red;
     background-color: blue;
 }
