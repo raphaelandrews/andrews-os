@@ -10,7 +10,12 @@
 }
 
 .theme__btn-cyber {
+    border: 2px solid transparent;
     background-color: var(--purple-cp);
+}
+
+.cyberpunk .theme__btn-cyber {
+    border: 2px solid var(--white-vhs);
 }
 
 .theme__name {

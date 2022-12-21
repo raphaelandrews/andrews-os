@@ -3,12 +3,7 @@ import React, { useEffect, useState } from "react";
 import "./style.css";
 import Draggable from "react-draggable";
 
-import interactiveRating from "../../assets/img/foto-1.png";
-import nftCard from "../../assets/img/foto-2.png";
-import orderSummary from "../../assets/img/foto-3.png";
-import foto from "../../assets/img/foto-raphael.png";
 import os from "../../assets/img/andrewsos.png";
-
 import Check from "../Check/Check";
 
 function getWindowDimensions() {
@@ -37,24 +32,16 @@ function useWindowDimensions() {
 }
 
 const System = ({
-  isDragging,
-  setIsDragging,
-  isDraggingOne,
-  setIsDraggingOne,
-  isDraggingTwo,
-  setIsDraggingTwo,
-  isDraggingThree,
-  setIsDraggingThree,
-  isDraggingFour,
-  setIsDraggingFour,
-  isDraggingFive,
-  setIsDraggingFive,
-  isDraggingSix,
-  setIsDraggingSix,
+  isDraggingProject,
+  setIsDraggingProject,
+  isDraggingFile,
+  setIsDraggingFile,
   isSystem,
   setIsSystem,
   isDraggingSystem,
   setIsDraggingSystem,
+  isDraggingAbout,
+  setIsDraggingAbout,
 }) => {
   const [isImg, setIsImg] = useState("/src/assets/img/foto-1.png");
   const [pink, setPink] = useState(false);
@@ -68,38 +55,22 @@ const System = ({
   };
 
   const dragSystem = () => {
-    setIsDragging({
-      ...isDragging,
-      zIndex: (isDragging.zIndex = 100),
+    setIsDraggingProject({
+      ...isDraggingProject,
+      zIndex: (isDraggingProject.zIndex = 100),
     }),
-      setIsDraggingOne({
-        ...isDraggingOne,
-        zIndex: (isDraggingOne.zIndex = 100),
-      }),
-      setIsDraggingTwo({
-        ...isDraggingTwo,
-        zIndex: (isDraggingTwo.zIndex = 100),
-      }),
-      setIsDraggingThree({
-        ...isDraggingThree,
-        zIndex: (isDraggingThree.zIndex = 100),
-      }),
-      setIsDraggingFour({
-        ...isDraggingFour,
-        zIndex: (isDraggingFour.zIndex = 100),
-      }),
-      setIsDraggingFive({
-        ...isDraggingFive,
-        zIndex: (isDraggingFive.zIndex = 100),
-      }),
-      setIsDraggingSix({
-        ...isDraggingSix,
-        zIndex: (isDraggingSix.zIndex = 100),
-      }),
+    setIsDraggingFile({
+      ...isDraggingFile,
+      zIndex: (isDraggingFile.zIndex = 100),
+    }),
       setIsDraggingSystem({
         ...isDraggingSystem,
         status: true,
         zIndex: (isDraggingSystem.zIndex = 101),
+      }),
+      setIsDraggingAbout({
+        ...isDraggingAbout,
+        zIndex: (isDraggingAbout.zIndex = 100),
       });
   };
 

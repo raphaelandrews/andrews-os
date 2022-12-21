@@ -4,7 +4,6 @@ import "../Icons/style.css";
 import Draggable from "react-draggable";
 
 import logo from "../../assets/img/logo-andrews.svg";
-import sun from "../../assets/img/sun.png";
 import statsCard from "../../assets/img/stats-preview-card.png";
 import nftCard from "../../assets/img/nft-card.png";
 import interactiveRating from "../../assets/img/interactive-rating.png";
@@ -21,314 +20,81 @@ import FileSix from "../Files/FileSix";
 const Projects = ({
   isProject,
   setIsProject,
-  isFileOne,
-  setIsFileOne,
-  isFileTwo,
-  setIsFileTwo,
-  isFileThree,
-  setIsFileThree,
-  isFileFour,
-  setIsFileFour,
-  isFileFive,
-  setIsFileFive,
-  isFileSix,
-  setIsFileSix,
-  isDragging,
-  setIsDragging,
-  isDraggingOne,
-  setIsDraggingOne,
-  isDraggingTwo,
-  setIsDraggingTwo,
-  isDraggingThree,
-  setIsDraggingThree,
-  isDraggingFour,
-  setIsDraggingFour,
-  isDraggingFive,
-  setIsDraggingFive,
-  isDraggingSix,
-  setIsDraggingSix,
+  isDraggingProject,
+  setIsDraggingProject,
+  isDraggingFile,
+  setIsDraggingFile,
   isDraggingSystem,
-  setIsDraggingSystem
+  setIsDraggingSystem,
+  isDraggingAbout,
+  setIsDraggingAbout,
 }) => {
-  const [isProj, setProj] = useState("/src/assets/img/foto-1.png");
+  const [isFileOpen, setIsFileOpen] = useState(false);
+  const [isFileBox, setIsFileBox] = useState(<FileOne />);
+  const [isPath, setIsPath] = useState("Stats Preview Card");
   const [isImg, setIsImg] = useState("/src/assets/img/interactive-rating.png");
 
-  const setChange = (changeImg) => {
-    setProj(changeImg);
+  const setChange = (changeFile) => {
+    setIsFileBox(changeFile);
+    setIsFileOpen(true);
   };
 
-  const handleOpen = () => {
+  const setPath = (changePath) => {
+    setIsPath(changePath);
+  };
+
+  const handleFileOpen = () => {
+    setIsFileOpen(false);
+  };
+
+  const handleProject = () => {
     setIsProject((current) => !current);
-    dragFileOpen();
+    dragProject();
   };
 
-  const dragFileOpen = () => {
-    setIsDragging({
-      ...isDragging,
+  const dragProject = () => {
+    setIsDraggingProject({
+      ...isDraggingProject,
       status: true,
-      zIndex: (isDragging.zIndex = 101),
+      zIndex: (isDraggingProject.zIndex = 101),
     }),
-      setIsDraggingOne({
-        ...isDraggingOne,
-        zIndex: (isDraggingOne.zIndex = 100),
-      }),
-      setIsDraggingTwo({
-        ...isDraggingTwo,
-        zIndex: (isDraggingTwo.zIndex = 100),
-      }),
-      setIsDraggingThree({
-        ...isDraggingThree,
-        zIndex: (isDraggingThree.zIndex = 100),
-      }),
-      setIsDraggingFour({
-        ...isDraggingFour,
-        zIndex: (isDraggingFour.zIndex = 100),
-      }),
-      setIsDraggingFive({
-        ...isDraggingFive,
-        zIndex: (isDraggingFive.zIndex = 100),
-      }),
-      setIsDraggingSix({
-        ...isDraggingSix,
-        zIndex: (isDraggingSix.zIndex = 100),
-      }),
-      setIsDraggingSystem({
-        ...isDraggingSystem,
-        zIndex: (isDraggingSystem.zIndex = 100),
-      });
-  };
-
-  const handleFileOne = () => {
-    setIsFileOne((current) => !current);
-    dragFileOne();
-  };
-
-  const dragFileOne = () => {
-    setIsDragging({ ...isDragging, zIndex: (isDragging.zIndex = 100) }),
-      setIsDraggingOne({
-        ...isDraggingOne,
-        status: true,
-        zIndex: (isDraggingOne.zIndex = 101),
-      });
-    setIsDraggingTwo({
-      ...isDraggingTwo,
-      zIndex: (isDraggingTwo.zIndex = 100),
+    setIsDraggingFile({
+      ...isDraggingFile,
+      zIndex: (isDraggingFile.zIndex = 100),
     }),
-      setIsDraggingThree({
-        ...isDraggingThree,
-        zIndex: (isDraggingThree.zIndex = 100),
-      }),
-      setIsDraggingFour({
-        ...isDraggingFour,
-        zIndex: (isDraggingFour.zIndex = 100),
-      }),
-      setIsDraggingFive({
-        ...isDraggingFive,
-        zIndex: (isDraggingFive.zIndex = 100),
-      }),
-      setIsDraggingSix({
-        ...isDraggingSix,
-        zIndex: (isDraggingSix.zIndex = 100),
-      }),
       setIsDraggingSystem({
         ...isDraggingSystem,
-        zIndex: (isDraggingSystem.zIndex = 100),
+        zIndex: (isDraggingSystem.zIndex = 99),
+      }),
+      setIsDraggingAbout({
+        ...isDraggingAbout,
+        zIndex: (isDraggingAbout.zIndex = 99),
       });
   };
 
-  const handleFileTwo = () => {
-    setIsFileTwo((current) => !current);
-    dragFileTwo();
-  };
-
-  const dragFileTwo = () => {
-    setIsDragging({ ...isDragging, zIndex: (isDragging.zIndex = 100) }),
-      setIsDraggingOne({
-        ...isDraggingOne,
-        zIndex: (isDraggingOne.zIndex = 100),
-      }),
-      setIsDraggingTwo({
-        ...isDraggingTwo,
+  const dragFile = () => {
+    setIsDraggingProject({
+      ...isDraggingProject,
+      zIndex: (isDraggingProject.zIndex = 100),
+    }),
+      setIsDraggingFile({
+        ...isDraggingFile,
         status: true,
-        zIndex: (isDraggingTwo.zIndex = 101),
-      }),
-      setIsDraggingThree({
-        ...isDraggingThree,
-        zIndex: (isDraggingThree.zIndex = 100),
-      }),
-      setIsDraggingFour({
-        ...isDraggingFour,
-        zIndex: (isDraggingFour.zIndex = 100),
-      }),
-      setIsDraggingFive({
-        ...isDraggingFive,
-        zIndex: (isDraggingFive.zIndex = 100),
-      }),
-      setIsDraggingSix({
-        ...isDraggingSix,
-        zIndex: (isDraggingSix.zIndex = 100),
+        zIndex: (isDraggingFile.zIndex = 101),
       }),
       setIsDraggingSystem({
         ...isDraggingSystem,
-        zIndex: (isDraggingSystem.zIndex = 100),
-      });
-  };
-
-  const handleFileThree = () => {
-    setIsFileThree((current) => !current);
-    dragFileThree();
-  };
-
-  const dragFileThree = () => {
-    setIsDragging({ ...isDragging, zIndex: (isDragging.zIndex = 100) }),
-      setIsDraggingOne({
-        ...isDraggingOne,
-        zIndex: (isDraggingOne.zIndex = 100),
+        zIndex: (isDraggingSystem.zIndex = 99),
       }),
-      setIsDraggingTwo({
-        ...isDraggingTwo,
-        zIndex: (isDraggingTwo.zIndex = 100),
-      }),
-      setIsDraggingThree({
-        ...isDraggingThree,
-        status: true,
-        zIndex: (isDraggingThree.zIndex = 101),
-      }),
-      setIsDraggingFour({
-        ...isDraggingFour,
-        zIndex: (isDraggingFour.zIndex = 100),
-      }),
-      setIsDraggingFive({
-        ...isDraggingFive,
-        zIndex: (isDraggingFive.zIndex = 100),
-      }),
-      setIsDraggingSix({
-        ...isDraggingSix,
-        zIndex: (isDraggingSix.zIndex = 100),
-      }),
-      setIsDraggingSystem({
-        ...isDraggingSystem,
-        zIndex: (isDraggingSystem.zIndex = 100),
-      });
-  };
-
-  const handleFileFour = () => {
-    setIsFileFour((current) => !current);
-    dragFileFour();
-  };
-
-  const dragFileFour = () => {
-    setIsDragging({ ...isDragging, zIndex: (isDragging.zIndex = 100) }),
-      setIsDraggingOne({
-        ...isDraggingOne,
-        zIndex: (isDraggingOne.zIndex = 100),
-      }),
-      setIsDraggingTwo({
-        ...isDraggingTwo,
-        zIndex: (isDraggingTwo.zIndex = 100),
-      }),
-      setIsDraggingThree({
-        ...isDraggingThree,
-        zIndex: (isDraggingThree.zIndex = 100),
-      }),
-      setIsDraggingFour({
-        ...isDraggingFour,
-        status: true,
-        zIndex: (isDraggingFour.zIndex = 101),
-      }),
-      setIsDraggingFive({
-        ...isDraggingFive,
-        zIndex: (isDraggingFive.zIndex = 100),
-      }),
-      setIsDraggingSix({
-        ...isDraggingSix,
-        zIndex: (isDraggingSix.zIndex = 100),
-      }),
-      setIsDraggingSystem({
-        ...isDraggingSystem,
-        zIndex: (isDraggingSystem.zIndex = 100),
-      });
-  };
-
-  const handleFileFive = () => {
-    setIsFileFive((current) => !current);
-    dragFileFive();
-  };
-
-  const dragFileFive = () => {
-    setIsDragging({ ...isDragging, zIndex: (isDragging.zIndex = 100) }),
-      setIsDraggingOne({
-        ...isDraggingOne,
-        zIndex: (isDraggingOne.zIndex = 100),
-      }),
-      setIsDraggingTwo({
-        ...isDraggingTwo,
-        zIndex: (isDraggingTwo.zIndex = 100),
-      }),
-      setIsDraggingThree({
-        ...isDraggingThree,
-        zIndex: (isDraggingThree.zIndex = 100),
-      }),
-      setIsDraggingFour({
-        ...isDraggingFour,
-        zIndex: (isDraggingFour.zIndex = 100),
-      }),
-      setIsDraggingFive({
-        ...isDraggingFive,
-        status: true,
-        zIndex: (isDraggingFive.zIndex = 101),
-      }),
-      setIsDraggingSix({
-        ...isDraggingSix,
-        zIndex: (isDraggingSix.zIndex = 100),
-      }),
-      setIsDraggingSystem({
-        ...isDraggingSystem,
-        zIndex: (isDraggingSystem.zIndex = 100),
-      });
-  };
-
-  const handleFileSix = () => {
-    setIsFileSix((current) => !current);
-    dragFileSix();
-  };
-
-  const dragFileSix = () => {
-    setIsDragging({ ...isDragging, zIndex: (isDragging.zIndex = 100) }),
-      setIsDraggingOne({
-        ...isDraggingOne,
-        zIndex: (isDraggingOne.zIndex = 100),
-      }),
-      setIsDraggingTwo({
-        ...isDraggingTwo,
-        zIndex: (isDraggingTwo.zIndex = 100),
-      }),
-      setIsDraggingThree({
-        ...isDraggingThree,
-        zIndex: (isDraggingThree.zIndex = 100),
-      }),
-      setIsDraggingFour({
-        ...isDraggingFour,
-        zIndex: (isDraggingFour.zIndex = 100),
-      }),
-      setIsDraggingFive({
-        ...isDraggingFive,
-        zIndex: (isDraggingFive.zIndex = 100),
-      }),
-      setIsDraggingSix({
-        ...isDraggingSix,
-        status: true,
-        zIndex: (isDraggingSix.zIndex = 101),
-      }),
-      setIsDraggingSystem({
-        ...isDraggingSystem,
-        zIndex: (isDraggingSystem.zIndex = 100),
+      setIsDraggingAbout({
+        ...isDraggingAbout,
+        zIndex: (isDraggingAbout.zIndex = 99),
       });
   };
 
   return (
     <>
-      <div className="icon__file cybr-btn" onClick={(e) => handleOpen()}>
+      <div className="icon__file cybr-btn" onClick={(e) => handleProject()}>
         <i className="bx bx-folder icon__img"></i>
         <div className="icon__text">Projects</div>
         <span className="cybr-btn__glitch">
@@ -341,13 +107,15 @@ const Projects = ({
         <Draggable
           handle="#imhandle"
           cancel=".buttons"
-          onStart={() => dragFileOpen()}
-          onStop={() => setIsDragging({ ...isDragging, status: false })}
+          onStart={() => dragProject()}
+          onStop={() =>
+            setIsDraggingProject({ ...isDraggingProject, status: false })
+          }
         >
           <div
             className={`draggable-block-container projects`}
             style={{
-              zIndex: isDragging.zIndex,
+              zIndex: isDraggingProject.zIndex,
             }}
           >
             <div className="projects__wrapper">
@@ -359,7 +127,7 @@ const Projects = ({
                   <span className="path__name">www.andrews.dev\projects</span>
                 </div>
 
-                <div className="buttons" onClick={(e) => handleOpen()}>
+                <div className="buttons" onClick={(e) => handleProject()}>
                   <div className="top__buttons">
                     <div className="button"></div>
                     <div className="button"></div>
@@ -379,7 +147,9 @@ const Projects = ({
                       <img
                         src={statsCard}
                         className="projects__preview"
-                        onClick={(e) => handleFileOne()}
+                        onClick={(e) => {
+                          setChange(<FileOne />), setPath("Stats Preview Card"), dragFile()
+                        }}
                       />
                       <h3 className="projects__text">Stats Preview Card</h3>
                       <span className="cybr-btn__glitch">
@@ -392,7 +162,9 @@ const Projects = ({
                       <img
                         src={nftCard}
                         className="projects__preview"
-                        onClick={(e) => handleFileTwo()}
+                        onClick={(e) => {
+                          setChange(<FileTwo />), setPath("NFT Card"), dragFile()
+                        }}
                       />
                       <h3 className="projects__text">NFT Card</h3>
                       <span className="cybr-btn__glitch">
@@ -405,7 +177,8 @@ const Projects = ({
                       <img
                         src={interactiveRating}
                         className="projects__preview"
-                        onClick={(e) => handleFileThree()}
+                        onClick={(e) => {setChange(<FileThree />), setPath("Interactive Rating"), dragFile()
+                      }}
                       />
                       <h3 className="projects__text">Interactive Rating</h3>
                       <span className="cybr-btn__glitch">
@@ -421,7 +194,8 @@ const Projects = ({
                       <img
                         src={cardComponent}
                         className="projects__preview"
-                        onClick={(e) => handleFileFour()}
+                        onClick={(e) => {setChange(<FileFour />), setPath("Card Component"), dragFile()
+                      }}
                       />
                       <h3 className="projects__text">Card Component</h3>
                       <span className="cybr-btn__glitch">
@@ -437,7 +211,8 @@ const Projects = ({
                       <img
                         src={orderSummary}
                         className="projects__preview"
-                        onClick={(e) => handleFileFive()}
+                        onClick={(e) => {setChange(<FileFive />), setPath("Order Summary"), dragFile()
+                      }}
                       />
                       <h3 className="projects__text">Order Summary</h3>
                       <span className="cybr-btn__glitch">
@@ -450,7 +225,8 @@ const Projects = ({
                       <img
                         src={qrCode}
                         className="projects__preview"
-                        onClick={(e) => handleFileSix()}
+                        onClick={(e) => {setChange(<FileSix />), setPath("QR Code"), dragFile()
+                      }}
                       />
                       <h3 className="projects__text">QR Code</h3>
                       <span className="cybr-btn__glitch">
@@ -466,26 +242,26 @@ const Projects = ({
         </Draggable>
       )}
 
-      {isFileOne && (
+      {isFileOpen && (
         <Draggable
           handle="#imhandle"
           cancel=".buttons"
-          onStart={() => dragFileOne()}
-          onStop={() => setIsDraggingOne({ ...isDraggingOne, status: false })}
+          onStart={() => dragFile()}
+          onStop={() => setIsDraggingFile({ ...isDraggingFile, status: false })}
         >
           <div
             className={`draggable-block-container file-1`}
             style={{
-              zIndex: isDraggingOne.zIndex,
+              zIndex: isDraggingFile.zIndex,
             }}
           >
             <div className="file__wrapper">
               <div className="projects__header" id="imhandle">
                 <img src={logo} alt="" className="projects__logo" />
 
-                <span className="path__name">Stats Preview Card</span>
+                <span className="path__name">{isPath}</span>
 
-                <div className="buttons" onClick={(e) => handleFileOne()}>
+                <div className="buttons" onClick={(e) => handleFileOpen()}>
                   <div className="top__buttons">
                     <div className="button"></div>
                     <div className="button"></div>
@@ -493,174 +269,7 @@ const Projects = ({
                   <div className="button"></div>
                 </div>
               </div>
-              <FileOne />
-            </div>
-          </div>
-        </Draggable>
-      )}
-
-      {isFileTwo && (
-        <Draggable
-          handle="#imhandle"
-          cancel=".buttons"
-          onStart={() => dragFileTwo()}
-          onStop={() => setIsDraggingTwo({ ...isDraggingTwo, status: false })}
-        >
-          <div
-            className={`draggable-block-container file-1`}
-            style={{
-              zIndex: isDraggingTwo.zIndex,
-            }}
-          >
-            <div className="file__wrapper">
-              <div className="projects__header" id="imhandle">
-                <img src={logo} alt="" className="projects__logo" />
-
-                <span className="path__name">Stats Preview Card</span>
-
-                <div className="buttons" onClick={(e) => handleFileTwo()}>
-                  <div className="top__buttons">
-                    <div className="button"></div>
-                    <div className="button"></div>
-                  </div>
-                  <div className="button"></div>
-                </div>
-              </div>
-              <FileTwo />
-            </div>
-          </div>
-        </Draggable>
-      )}
-
-      {isFileThree && (
-        <Draggable
-          handle="#imhandle"
-          cancel=".buttons"
-          onStart={() => dragFileThree()}
-          onStop={() =>
-            setIsDraggingThree({ ...isDraggingThree, status: false })
-          }
-        >
-          <div
-            className={`draggable-block-container file-1`}
-            style={{
-              zIndex: isDraggingThree.zIndex,
-            }}
-          >
-            <div className="file__wrapper">
-              <div className="projects__header" id="imhandle">
-                <img src={logo} alt="" className="projects__logo" />
-
-                <span className="path__name">Stats Preview Card</span>
-
-                <div className="buttons" onClick={(e) => handleFileThree()}>
-                  <div className="top__buttons">
-                    <div className="button"></div>
-                    <div className="button"></div>
-                  </div>
-                  <div className="button"></div>
-                </div>
-              </div>
-              <FileThree />
-            </div>
-          </div>
-        </Draggable>
-      )}
-
-      {isFileFour && (
-        <Draggable
-          handle="#imhandle"
-          cancel=".buttons"
-          onStart={() => dragFileFour()}
-          onStop={() => setIsDraggingFour({ ...isDraggingFour, status: false })}
-        >
-          <div
-            className={`draggable-block-container file-1`}
-            style={{
-              zIndex: isDraggingFour.zIndex,
-            }}
-          >
-            <div className="file__wrapper">
-              <div className="projects__header" id="imhandle">
-                <img src={logo} alt="" className="projects__logo" />
-
-                <span className="path__name">Stats Preview Card</span>
-
-                <div className="buttons" onClick={(e) => handleFileFour()}>
-                  <div className="top__buttons">
-                    <div className="button"></div>
-                    <div className="button"></div>
-                  </div>
-                  <div className="button"></div>
-                </div>
-              </div>
-              <FileFour />
-            </div>
-          </div>
-        </Draggable>
-      )}
-
-      {isFileFive && (
-        <Draggable
-          handle="#imhandle"
-          cancel=".buttons"
-          onStart={() => dragFileFive()}
-          onStop={() => setIsDraggingFive({ ...isDraggingFive, status: false })}
-        >
-          <div
-            className={`draggable-block-container file-1`}
-            style={{
-              zIndex: isDraggingFive.zIndex,
-            }}
-          >
-            <div className="file__wrapper">
-              <div className="projects__header" id="imhandle">
-                <img src={logo} alt="" className="projects__logo" />
-
-                <span className="path__name">Stats Preview Card</span>
-
-                <div className="buttons" onClick={(e) => handleFileFive()}>
-                  <div className="top__buttons">
-                    <div className="button"></div>
-                    <div className="button"></div>
-                  </div>
-                  <div className="button"></div>
-                </div>
-              </div>
-              <FileFive />
-            </div>
-          </div>
-        </Draggable>
-      )}
-
-      {isFileSix && (
-        <Draggable
-          handle="#imhandle"
-          cancel=".buttons"
-          onStart={() => dragFileSix()}
-          onStop={() => setIsDraggingSix({ ...isDraggingSix, status: false })}
-        >
-          <div
-            className={`draggable-block-container file-1`}
-            style={{
-              zIndex: isDraggingSix.zIndex,
-            }}
-          >
-            <div className="file__wrapper">
-              <div className="projects__header" id="imhandle">
-                <img src={logo} alt="" className="projects__logo" />
-
-                <span className="path__name">Stats Preview Card</span>
-
-                <div className="buttons" onClick={(e) => handleFileSix()}>
-                  <div className="top__buttons">
-                    <div className="button"></div>
-                    <div className="button"></div>
-                  </div>
-                  <div className="button"></div>
-                </div>
-              </div>
-              <FileSix />
+              {isFileBox}
             </div>
           </div>
         </Draggable>

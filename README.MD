@@ -4,9 +4,12 @@ npm install
 npm run dev
 
 ## Box Icons
-Import the CSS
-Copy-paste the stylesheet link into your head to load our CSS:
+#### Import the CSS
+#### Copy-paste the stylesheet link into your head to load our CSS:
+
+```sh
 link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'
+```
 
 ## MUI (Material UI)
 npm install @mui/material @emotion/react @emotion/styled

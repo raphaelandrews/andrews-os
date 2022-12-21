@@ -19,30 +19,25 @@ const Theme = () => {
   }
 
   const switchCyberpunk = (e) => {
-    if (theme === lightTheme || theme === altTheme) {
       body.classList.add(cyberpunkTheme);
       body.classList.remove(lightTheme, altTheme);
       localStorage.setItem("theme", "cyberpunk");
       theme = cyberpunkTheme;
-    }
+      localStorage.setItem("theme", "cyberpunk");
   };
 
   const switchLight = (e) => {
-    if (theme === cyberpunkTheme || theme === altTheme) {
       body.classList.add(lightTheme);
       body.classList.remove(cyberpunkTheme, altTheme);
       localStorage.setItem("theme", "light");
       theme = lightTheme;
-    }
   };
 
-  const switchAlt = (e) => {
-    if (theme === cyberpunkTheme || theme === lightTheme) {
+  const switchAlt = (e) => {  
       body.classList.add(altTheme);
       body.classList.remove(lightTheme, cyberpunkTheme);
       localStorage.setItem("theme", "alt");
       theme = altTheme;
-    }
   };
 
   return (
@@ -59,7 +54,10 @@ const Theme = () => {
           <span className="theme__palette"></span>
         </span>
       </button>
-      <button onClick={(e) => switchLight(e)} className="theme__btn theme__btn-cyber">
+      <button
+        onClick={(e) => switchLight(e)}
+        className="theme__btn theme__btn-cyber"
+      >
         <span className="theme__name">Cyberpunk</span>
         <span className="theme__picker">
           <span className="theme__palette theme__cyber-one"></span>
@@ -68,7 +66,10 @@ const Theme = () => {
           <span className="theme__palette"></span>
         </span>
       </button>
-      <button onClick={(e) => switchAlt(e)} className="theme__btn theme__btn-cyber">
+      <button
+        onClick={(e) => switchAlt(e)}
+        className="theme__btn theme__btn-cyber"
+      >
         <span className="theme__name">Cyberpunk</span>
         <span className="theme__picker">
           <span className="theme__palette theme__cyber-one"></span>
@@ -77,7 +78,10 @@ const Theme = () => {
           <span className="theme__palette"></span>
         </span>
       </button>
-      <button onClick={(e) => switchAlt(e)} className="theme__btn theme__btn-cyber">
+      <button
+        onClick={(e) => switchAlt(e)}
+        className="theme__btn theme__btn-cyber"
+      >
         <span className="theme__name">Cyberpunk</span>
         <span className="theme__picker">
           <span className="theme__palette theme__cyber-one"></span>
@@ -86,7 +90,10 @@ const Theme = () => {
           <span className="theme__palette"></span>
         </span>
       </button>
-      <button onClick={(e) => switchAlt(e)} className="theme__btn theme__btn-cyber">
+      <button
+        onClick={(e) => switchAlt(e)}
+        className="theme__btn theme__btn-cyber"
+      >
         <span className="theme__name">Cyberpunk</span>
         <span className="theme__picker">
           <span className="theme__palette theme__cyber-one"></span>
