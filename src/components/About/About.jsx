@@ -3,8 +3,16 @@ import React, { useEffect, useState } from "react";
 import "./style.css";
 import Draggable from "react-draggable";
 
-import foto from "../../assets/img/foto-raphael.png";
+import statsCard from "../../assets/img/stats-preview-card.png";
+import nftCard from "../../assets/img/nft-card.png";
+import interactiveRating from "../../assets/img/interactive-rating.png";
+import cardComponent from "../../assets/img/profile-card-component.png";
+import orderSummary from "../../assets/img/order-summary.png";
+import qrCode from "../../assets/img/qr-code.png";
+import Documents from "../Gallery/Gallery";
 
+import foto from "../../assets/img/foto-raphael.png";
+import Gallery from "../Gallery/Gallery";
 
 const About = ({
   isDraggingProject,
@@ -35,10 +43,10 @@ const About = ({
       ...isDraggingProject,
       zIndex: (isDraggingProject.zIndex = 100),
     }),
-    setIsDraggingFile({
-      ...isDraggingFile,
-      zIndex: (isDraggingFile.zIndex = 100),
-    }),
+      setIsDraggingFile({
+        ...isDraggingFile,
+        zIndex: (isDraggingFile.zIndex = 100),
+      }),
       setIsDraggingSystem({
         ...isDraggingSystem,
         status: true,
@@ -71,14 +79,15 @@ const About = ({
           }
         >
           <div
-            className={`draggable-block-container system`}
+            className={`draggable-block-container about`}
             style={{
               zIndex: isDraggingAbout.zIndex,
             }}
           >
-            <div className="system__wrapper">
-              <div className="system__container">
-                <div className="system__header" id="imhandle">
+            <div className="about__wrapper">
+              <div className="about__container">
+                <div className="about__header" id="imhandle">
+                  <span className="about__mini">raphaelandrews</span>
                   <div className="buttons" onClick={handleAbout}>
                     <div className="top__buttons">
                       <div className="button"></div>
@@ -87,58 +96,86 @@ const About = ({
                     <div className="button"></div>
                   </div>
                 </div>
-                <div className="system__box">
-                  <h2 className="system__title">Andrews OS</h2>
-                  {/*<div className="system__border">
-                    <div className="system__handle">
-                      <img src={foto} alt="" className="system__photo" />
-                    </div>
-                  </div>*/}
+                <div className="about__box">
+                  <div className="about__border">
+                    <img
+                      src={foto}
+                      alt="Raphael Andrews"
+                      className="about__perfil"
+                    />
+                  </div>
+
+                  <div className="about__name">
+                    <h2 className="about__title">Raphael Andrews</h2>
+                    <span className="about__slash">|</span>
+                    <h2 className="about__subtitle">Frontend Developer</h2>
+                  </div>
+
+                  <p className="about__text">
+                    &#x1F44B; Hello, I'm Raphael and I like to build creative
+                    things on the internet.
+                  </p>
+
+                  <div className="about__btns">
+                    <a href="" className="about__btn">
+                      Info
+                    </a>
+                    <a href="" className="about__btn">
+                      Download CV
+                    </a>
+                    <a href="" className="about__btn">
+                      Contact
+                    </a>
+                  </div>
+
+                  <div className="about__socials">
+                    <a href="" className="about__social"></a>
+                    <a href="" className="about__social"></a>
+                    <a href="" className="about__social"></a>
+                    <a href="" className="about__social"></a>
+                    <a href="" className="about__social"></a>
+                  </div>
+
+                  <div className="about__divider"></div>
+
+<Gallery />
+
 
                   {/*<div className="gallery">
-                  <figure className="gallery__main">
-          <img className="gallery__img" id="mainImg" src={isImg} />
-                  </figure>
+                    <figure className="gallery__main">
+                      <img className="gallery__img" id="mainImg" src={isImg} />
+                    </figure>
 
-                  <ul className="gallery__list">
-                    <li className="gallery__item">
-                      <img
-                        id="thumb1"
-                        src={interactiveRating}
-                        onClick={() =>
-                          setChange("/src/assets/img/foto-1.png")
-                        }
-                      />
-                    </li>
-                    <li className="gallery__item">
-                      <img
-                        id="thumb2"
-                        src={nftCard}
-                        onClick={() => setChange("/src/assets/img/foto-2.png")}
-                      />
-                    </li>
-                    <li className="gallery__item">
-                      <img
-                        id="thumb3"
-                        src={orderSummary}
-                        onClick={() => setChange("/src/assets/img/foto-3.png")}
-                      />
-                    </li>
-                  </ul>
-                </div>*/}
-
-                  <div className="system__content">            
-                    {/*<h3 className="system__text">
-                      Location: <span className="system__span">Aracaju/SE</span>
-                    </h3>
-                    <h3 className="system__text">
-                      Role: <span className="system__span">Web Developer</span>
-                    </h3>
-                    <h3 className="system__text">
-                      Description:{" "}
-                      <span className="system__span">Lorem ipsum dolor</span>
-                    </h3>*/}
-                  </div>
+                    <ul className="gallery__list">
+                      <li className="gallery__item">
+                        <img
+                          id="thumb1"
+                          src={interactiveRating}
+                          onClick={() =>
+                            setChange("/src/assets/img/foto-1.png")
+                          }
+                        />
+                      </li>
+                      <li className="gallery__item">
+                        <img
+                          id="thumb2"
+                          src={nftCard}
+                          onClick={() =>
+                            setChange("/src/assets/img/foto-2.png")
+                          }
+                        />
+                      </li>
+                      <li className="gallery__item">
+                        <img
+                          id="thumb3"
+                          src={orderSummary}
+                          onClick={() =>
+                            setChange("/src/assets/img/foto-3.png")
+                          }
+                        />
+                      </li>
+                    </ul>
+                        </div>*/}
                 </div>
               </div>
             </div>

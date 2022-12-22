@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Lexend:wght@100;200;300;400;500;600;700;800;900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Dosis:wght@200;300;400;500;600;700;800&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Syncopate:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
 
 @font-face {
     font-family: 'Road Rage';
@@ -35,7 +36,8 @@
     --dark-blue-cp: hsl(231, 40%, 24%);
     --pink2-cp: hsl(324, 100%, 50%);
     --purple-cp: hsl(240, 100%, 7%);
-    --dark-purple-cp: hsl(244, 70%, 13%);
+    --purple-cp-alt: hsl(240, 100%, 13%);
+    --dark-purple-cp: hsl(240, 100%, 19%);
     --grey-cp: hsl(240, 14%, 55%);
     --yellow-cp: hsl(34, 88%, 50%);
     --yellow-cp-alt: hsl(34, 88%, 44%);
@@ -71,11 +73,12 @@
     font-family: 'Lexend', sans-serif;
     font-family: 'Dosis', sans-serif; 
     font-family: 'Syncopate', sans-serif; 
-    font-family: 'Road Rage', sans-serif;                  
+    font-family: 'Road Rage', sans-serif;
+    font-family: 'Poppins', sans-serif;                  
     */
     
     --first-font: 'Dosis', sans-serif;
-    --second-font: '';
+    --second-font: 'Poppins', sans-serif;
     --alt-font: 'Road Rage';
     --r2-fs: 2rem;
     --h2-font-size: 1.75rem;
