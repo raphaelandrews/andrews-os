@@ -13,6 +13,7 @@
     position: fixed;
     top: 50%;
     left: 50%;
+    max-width: 94%;
 }
 
 .about__wrapper {
@@ -42,18 +43,21 @@
     position: relative;
     display: flex;
     align-items: center;
-    justify-content: flex-end;
+    justify-content: space-between;
     padding: 0 1rem;
     width: 100%;
-    height: 2.5rem;
+    height: 2.25rem;
+    border-bottom: 2px solid;
     border-radius: .5rem .5rem 0 0;
-    background-color: var(--dark-purple);
+    border-image: var(--purple-pink-sweet);
+    background-color: var(--dark-sweet);
+}
+
+.about__logo {
+    width: 14px;
 }
 
 .about__mini {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
     font-size: 1rem;
     font-weight: 600;
     color: var(--grey-cp);
@@ -64,8 +68,9 @@
     /* display: flex;*/
     gap: 2rem;
     height: 100%;
-    margin-bottom: .625rem;
     border-radius: .375rem;
+    padding: 0 0 2rem;
+    margin-bottom: .625rem;
     overflow-y: auto;
 }
 
@@ -80,7 +85,7 @@
     width: 76px;
     height: 76px;
     border-radius: 35%;
-    margin: 0 auto;
+    margin: 1rem auto 0;
 }
 
 .about__border::after {
@@ -125,8 +130,7 @@
     font-weight: 600;
     text-align: center;
     color: var(--white-vhs);
-    width: 124.75px;
-    text-align: right;
+    width: 64.6px;
 }
 
 .about__slash {
@@ -139,7 +143,7 @@
     font-size: 1rem;
     font-weight: 600;
     text-align: center;
-    width: 124.75px;
+    width: 64.6px;
 }
 
 .about__text {
@@ -148,6 +152,7 @@
     color: var(--grey-sweet);
     font-size: .75rem;
     text-align: center;
+    padding: 0 2rem;
 }
 
 .about__title-span {
@@ -161,6 +166,7 @@
 .about__btns {
     text-align: center;
     max-width: 400px;
+    padding: 0 1.75rem 0;
     margin: 1.25rem auto;
 }
 
@@ -194,15 +200,19 @@
 
 .about__socials {
     display: flex;
-    justify-content: center;
     gap: 1rem;
-    margin-bottom: 1rem;
+    margin: 0 0 1rem 1.25rem;
+    overflow: auto;
+}
+
+.about__socials::-webkit-scrollbar {
+    display: none;
 }
 
 .about__social {
     display: block;
-    width: 65px;
-    height: 65px;
+    min-width: 65px;
+    min-height: 65px;
     border-radius: 1.75rem;
     background-color: var(--yellow-cp);
 }
@@ -269,4 +279,21 @@ img {
 }
 
 /*=============== RESPONSIVE ===============*/
-@media screen and (min-width: 600px) {}
+@media screen and (min-width: 400px) {
+    .about__title,
+    .about__subtitle {
+        width: 124.75px;
+    }
+
+    .about__title {
+        text-align: right;
+    }
+
+    .about__subtitle {
+        text-align: left;
+    }
+
+    .about__br {
+        display: none;
+    }
+}

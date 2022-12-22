@@ -2,17 +2,9 @@
 import React, { useEffect, useState } from "react";
 import "./style.css";
 import Draggable from "react-draggable";
-
-import statsCard from "../../assets/img/stats-preview-card.png";
-import nftCard from "../../assets/img/nft-card.png";
-import interactiveRating from "../../assets/img/interactive-rating.png";
-import cardComponent from "../../assets/img/profile-card-component.png";
-import orderSummary from "../../assets/img/order-summary.png";
-import qrCode from "../../assets/img/qr-code.png";
-import Documents from "../Gallery/Gallery";
-
-import foto from "../../assets/img/foto-raphael.png";
 import Gallery from "../Gallery/Gallery";
+import logo from "../../assets/img/logo-andrews.svg";
+import foto from "../../assets/img/foto-raphael.png";
 
 const About = ({
   isDraggingProject,
@@ -87,6 +79,7 @@ const About = ({
             <div className="about__wrapper">
               <div className="about__container">
                 <div className="about__header" id="imhandle">
+                <img src={logo} alt="" className="about__logo" />
                   <span className="about__mini">raphaelandrews</span>
                   <div className="buttons" onClick={handleAbout}>
                     <div className="top__buttons">
@@ -106,9 +99,9 @@ const About = ({
                   </div>
 
                   <div className="about__name">
-                    <h2 className="about__title">Raphael Andrews</h2>
+                    <h2 className="about__title">Raphael<br className="about__br" /> Andrews</h2>
                     <span className="about__slash">|</span>
-                    <h2 className="about__subtitle">Frontend Developer</h2>
+                    <h2 className="about__subtitle">Frontend<br className="about__br" /> Developer</h2>
                   </div>
 
                   <p className="about__text">
@@ -128,18 +121,17 @@ const About = ({
                     </a>
                   </div>
 
-                  <div className="about__socials">
-                    <a href="" className="about__social"></a>
-                    <a href="" className="about__social"></a>
-                    <a href="" className="about__social"></a>
-                    <a href="" className="about__social"></a>
-                    <a href="" className="about__social"></a>
-                  </div>
+                    <div className="about__socials">
+                      <a href="" className="about__social"></a>
+                      <a href="" className="about__social"></a>
+                      <a href="" className="about__social"></a>
+                      <a href="" className="about__social"></a>
+                      <a href="" className="about__social"></a>
+                    </div>
 
                   <div className="about__divider"></div>
 
-<Gallery />
-
+                  <Gallery />
 
                   {/*<div className="gallery">
                     <figure className="gallery__main">

@@ -71,7 +71,7 @@ const Projects = ({
         zIndex: (isDraggingAbout.zIndex = 99),
       });
   };
-
+  
   const dragFile = () => {
     setIsDraggingProject({
       ...isDraggingProject,
